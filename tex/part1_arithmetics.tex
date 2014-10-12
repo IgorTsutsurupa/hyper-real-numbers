@@ -1,0 +1,226 @@
+\begin{center}
+	\b{ЧАСТЬ 1: АРИФМЕТИКА}
+\end{center}
+
+\b{Определение.} Множеством надвещественных чисел называется множество упорядоченных пар вещественных чисел $(a, b)$ с введенными на нем двумя операциями сложения (символ $+$) и умножения (символ $\cdot$), определенными следующим образом.
+	\begin{enumerate}
+		\item $(a, b)+(c, d)=(a+b, c+d)$, 
+		\item $(a, b)\cdot(c, d)=(ac, ad+bc)$ (не определено, если $a, c$ одновременно равны $0$).
+	\end{enumerate}
+Число $a$ будем называть \i{вещественной} частью надвещественного числа и обозначать $\Re{\hat a}$, число $b$ -- \i{малой} частью числа и обозначать $\Ab{\hat a}$.\par
+Множество надвещесвенных обозначим $\AbR$. \par
+Заметим, что
+	\begin{eqnarray}
+		(a, 0)+(b, 0) &=&(a+b, 0), \\
+		(a, 0)\cdot(b, 0)&=&(ab, 0).
+	\end{eqnarray}
+Таким образом, имеет смысл писать $a$ вместо $(a, 0)$ и считать множество вещественных чисел подмножеством множества надвещественных чисел:
+	$$\mathbb{R}\subset \AbR.$$
+\begin{example} 
+	Умножим вещественное число $C$ на надвещественное $\hat{a}=(a, b)$:
+\end{example}
+	$$C\cdot\hat{a}=(C, 0)\cdot(a, b)=(C\cdot a, C\cdot b+0\cdot a)=(Ca, Cb).$$
+Пару $(0, 1)$ обозначим как $\hat{o}$. Таким образом,
+	$$C\cdot(0, 1)=(0, C)=C\hat{o},$$
+отсюда 
+	\begin{equation}
+		(a, b)=(a, 0)+(0, b)=a+b\hat{o}.
+	\end{equation}
+Такую запись надвещественного числа назовем \i{алгебраической}. Удобнее становится записывать сумму надвещественных чисел:
+	\begin{equation}
+		a+b\hat{o}+(c+d\hat{o})=(a+c)+(b+d)\hat{o}.
+	\end{equation}
+
+\b{Равенство.} Надвещественные числа $(a, b)$ и $(c, d)$ равны тогда и только тогда, когда $a=c$, $b=d$. В других обозначениях:
+	\begin{equation}
+	  \hat{a}=\hat{b}\Leftrightarrow
+		\left\{
+			\begin{aligned}
+				\Re{\hat a}=\Re{\hat b} \\
+				\Ab{\hat a}=\Ab{\hat b}
+			\end{aligned}
+		\right.
+	\end{equation}
+Из этого определения немедленно вытекают рефлексивность, симметричность и транзитивность равенства, а также следующие свойства:
+\begin{enumerate}
+	\item $\hat{a}=\hat{b},\,\,\hat{c}=\hat{d}\Rightarrow \hat{a}\cdot\hat{c}=\hat{b}\cdot\hat{d}$ (см. определение умножения).
+	\item $\hat{a}=\hat{b},\,\,\hat{c}=\hat{d}\Rightarrow \hat{a}+\hat{c}=\hat{b}+\hat{d}$,
+\end{enumerate}
+
+\b{Разность.} \i{Разностью} надвещественных чисел $\hat{c}_1$ и $\hat{c}_2$ является надвещественное число $\hat{c}$ такое, что
+	$$\hat{c}+\hat{c}_2=\hat{c}_1,$$
+и обозначается
+	$$\hat{c}=\hat{c}_1-\hat{c}_2.$$
+Пусть $\hat{c}=(a, b)$, $\hat{c}_1=(a_1, b_1)$, $\hat{c}_2=(a_2, b_2)$. Тогда
+	$$ \left\{
+			\begin{aligned}
+				a+a_2=a_1 \\
+				b+b_2=b_1
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left\{
+			\begin{aligned}
+				a=a_1-a_2\\
+				b=b_1-b_2
+			\end{aligned}
+		\right.
+	$$
+Следовательно, $a+b\hat{o}-(c+d\hat{o})=(a-c)+(b-d)\hat{o}$. Позже аналогично определим корень $n$-ной степени надвещественного числа $\hat{a}$.
+
+\b{Свойства сложения и умножения.} Перемножим числа в их алгебраической форме, как если бы они были действительными:
+	$$(a+b\hat{o})\cdot(c+d\hat{o})=ac+ad\hat{o}+cb\hat{o}+bd\hat{o}\hat{o}=ac+(ad+ac)\hat{o}+bd\hat{o}^2.$$
+Но по определению
+	$$(a+b\hat{o})\cdot(c+d\hat{o})=ac+(ad+cb)\hat{o}.$$
+Выходит, что чтобы перемножить два надвещественных числа в алгебраической форме, можно перемножить их как суммы действительных чисел, отбросив затем слогаемые вида $\hat{o}^n$, сделав вид, что вы их не видели. 
+\begin{example} Получить формулу для $n$-ной степени числа $\hat{a}$  (а $n$-ной степенью надвещественного числа $\hat{a}$ назовем произведение $n$ множителей $\hat{a}$) можно с помощью бинома Ньютона:
+	$$(a+b\hat{o})^n=\sum_{k=0}^n C_n^k a^{n-k} (b\hat{o})^k=a^n+na^{n-1}b\hat{o}=a^{n-1}(a+nb\hat{o}).$$
+Докажем полученное равенство средствами математической индукции. Возведем $\hat{a}=(a, b)$ в квадрат:
+	$$\hat{a}^2=(a, b)^2=(a^2, 2ab).$$
+База индукции доказана. Предположим, что
+	$$\hat{a}^k=(a^k, na^{k-1}b),$$
+тогда
+	\begin{eqnarray*}
+	& \hat{a}^{k+1}=\hat{a}^k\cdot\hat{a}=(a^k, na^{k-1}b)\cdot(a, b)= \\
+	& = (a^{k+1}, na^{k-1}b\cdot a+a^{k+1}b)=(a^{k+1}, (k+1)a^kb).
+	\end{eqnarray*}
+\end{example}
+Таким образом,
+\begin{equation}\label{eq:npower}
+	\hat{a}^n=(a^n, na^{n-1}b).
+\end{equation}
+\begin{example} Может ли произведение надвещественных чисел быть вещественным числом? Да, пример -- произведение чисел вида $(a, b)$ и $(a, -b)$:
+	$$(a, b)\cdot(a, -b)=(aa, ab+a(-b))=(a^2, 0)=a^2.$$
+Их сумма, очевидно, также действительное число.
+\end{example}
+Приведем свойства сложения и умножения. Пусть $\hat{a}$, $\hat{b}$ и $\hat{c}$ -- надвещественные числа. Тогда
+\begin{enumerate}
+	\item $\hat{a}+\hat{b}=\hat{b}+\hat{a}$ (сложение коммутативно); 
+	\item $\hat{a}\cdot\hat{b}=\hat{b}\cdot\hat{a}$ (умножение коммутативно); 
+	\item $(\hat{a}+\hat{b})+\hat{c}=\hat{a}+(\hat{b}+\hat{c})$ (сложение ассоциативно); 
+	\item $(\hat{a}\cdot\hat{b})\cdot\hat{c}=\hat{a}\cdot(\hat{b}\cdot\hat{c})$ (умножение ассоциативно);
+	\item $(\hat{a}+\hat{b})\cdot\hat{c}=\hat{a}\cdot\hat{c}+\hat{b}\cdot\hat{c}$ (дистрибутивность сложения относительно умножения).
+\end{enumerate}
+Докажем только последнее свойство. Пусть $\hat{a}=(a_1, b_1)$, $\hat{b}=(a_2, b_2)$, $\hat{c}=(a_3, b_3)$. Левая часть равенства равна
+\begin{eqnarray*}
+	& (\hat{a}+\hat{b})\cdot\hat{c}=\big((a_1, b_1)+(a_2, b_2)\big)\cdot(a_3, b_3)=(a_1+a_2, b_1+b_2)\cdot(a_3, b_3)= \\
+	& =\big((a_1+a_2)a_3, (a_1+a_2)b_3+(b_1+b_2)a_3\big) = \\
+	& =(a_1a_3+a_2a_3, a_1b_3+a_2b_2+b_1a_3+b_2a_3).
+\end{eqnarray*}
+Правая же равна
+\begin{eqnarray*}
+	& \hat{a}\cdot\hat{c}+\hat{b}\cdot\hat{c}=(a_1, b_1)\cdot(a_3, b_3)+(a_2, b_2)\cdot(a_3, b_3)= \\
+	& =(a_1a_3, a_1b_3+b_1a_3)+(a_2a_3, a_2b_3+a_3b_2)= \\
+	& =(a_1a_3+a_2a_3, a_1b_3+b_1a_3+a_2b_3+a_3b_2).
+\end{eqnarray*}
+Свойство доказано.
+
+\b{Сравнение.} Введем отношение ``больше'' ($>$) на множестве $\AbR\times\AbR$:
+	\begin{equation}
+	\hat{a}>\hat{b}
+	  \Leftrightarrow
+		\left[
+			\begin{aligned}
+				\Re{\hat{a}}>\Re{\hat{b}} \\
+				\left\{
+					\begin{aligned}
+						\Re{\hat{a}}=\Re{\hat{b}} \\
+						\Ab{\hat{a}}>\Ab{\hat{b}}
+					\end{aligned}
+				\right.
+			\end{aligned}
+		\right.
+	\end{equation}
+Отсюда следует важное утверждение. Рассмотрим числа $n\hat{o}$ и $a$, $a>0$, тогда $n\hat{o}\hm<a$. Поскольку мы не указали $n$ и $a$, то неравенство будет справедливо для любых $n$ и $a$:
+	$$\forall a>0 \,\, \forall n \,\, n\hat{o}<a,$$
+или
+	$$\forall a>0 \quad \hat{o}<a. $$
+Утверждение является отрицанием аксиомы Архимеда, а его второй способ записи призван подчеркнуть природу объекта $\hat{o}$, меньшего любого действительного числа, который теперь мы будем называть бесконечно малой.
+
+\b{Частное.} \i{Частным} надвещественных чисел $\hat{c}_1$ и $\hat{c}_2$ назовем надвещественное число $\hat{c}$ такое, что
+	$$\hat{c}\cdot\hat{c}_2=\hat{c}_1,$$
+и обозначим 
+	$$\hat{c}=\frac{\hat{c}_1}{\hat{c}_2}.$$
+Найдем $\hat{c}$. Пусть $\hat{c}=(a, b)$, $\hat{c}_1=(a_1, b_1)$, $\hat{c}_2=(a_2, b_2)$. Тогда
+	$$\left\{
+			\begin{aligned}
+				& aa_2=a_1 \\
+				& ab_2+ba_2=b_1.
+			\end{aligned}
+		\right.
+	$$
+Видно, что при $a_2=0$, $a_1\neq 0$ первое уравнение не имеет решения, а следовательно, частное не определено. Решение разбивается на два случая: при $a_1=a_2=0$ и при $a_2\neq 0$. В первом случае получаем систему
+	$$\left\{
+			\begin{aligned}
+				& 0\cdot a=0 \\
+				& ab_2+0\cdot b=b_1
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left\{
+			\begin{aligned}
+				& b\in \mathbb{R} \\
+				& a=\frac{b_1}{b_2}.
+			\end{aligned}
+		\right.
+	$$
+Из решения системы вытекает неопределенность: одинаково верны равенства $\cfrac{a\hat{o}}{b\hat{o}}=\cfrac{a}{b}$ и $\cfrac{a\hat{o}}{b\hat{o}}=\cfrac{a}{b}+4\hat{o}$, поэтому будем считать малую часть частного равным $0$.\par
+Для второго случая получаем
+	$$\left\{
+			\begin{aligned}
+				& a=\frac{a_1}{a_2} \\
+				& \frac{a_1}{a_2}b_2+ba_2=b_1
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left\{
+			\begin{aligned}
+				& a=\frac{a_1}{a_2} \\
+				& b=\left(b_1-\frac{a_1}{a_2}\right)\frac{1}{a_2}
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left\{
+			\begin{aligned}
+				& a=\frac{a_1}{a_2} \\
+				& b=\frac{a_2b_1-a_1b_2}{a_2^2}.
+			\end{aligned}
+		\right.
+	$$
+Итак, $\hat{c}=\left(\cfrac{a_1}{a_2}, \cfrac{a_2b_1-a_1b_2}{a_2^2}\right)$ при $a_2\neq 0$, $\hat{c}=\cfrac{b_1}{b_2}$ при $a_1=a_2=0$.\par
+Найдем обратное к надвещественному $\hat{a}=(a, b)$ число $\hat{a}^{-1}$, т.е. такое число $\hat{b}$, что $\hat{a}\hat{b}=1$. Как мы уже было показано, в случае, если $\Re{\hat{a}}=0$, $\hat{a}^{-1}$ не определен, поскольку $\Re{1}=1\neq 0$. Тогда, если $\Re{\hat{a}}\neq 0$, согласно формуле деления получаем
+\begin{equation}
+	\hat{a}^{-1}=\left(\frac{1}{a}, -\frac{b}{a^2}\right).
+\end{equation}
+Таким образом, равенство $\cfrac{a}{b}=ab^{-1}$ в общем случае неверно.
+
+\b{Корень $n$-ной степени.} \i{Корнем $n$-ной степени} надвещественного числа $\hat{a}$ назовем число $\hat{b}$ такое, что 
+	$$\hat{a}=\hat{b}^n,$$
+и обозначим
+	$$\hat{b}=\sqrt[n]{\hat{a}}.$$
+Пусть $\hat{a}=(a_1, b_1)$, $\hat{b}=(a_2, b_2)$. Тогда, согласно \eqref{eq:npower}, получаем
+	$$\left\{
+			\begin{aligned}
+				& a_1=a_2^n \\
+				& b_1=na_2^{n-1}b_2
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left\{
+			\begin{aligned}
+				& a_2=a_1^{1/n} \\
+				& b_2=\frac{1}{n}a_1^{(1-n)/n}b_1
+			\end{aligned}
+		\right.
+	$$
+Таким образом,
+	\begin{equation}
+		\sqrt[n]{\hat{a}}=\left(a^{1/n}, \frac{1}{n}a^{(1-n)/n}b\right).
+	\end{equation}
+
+\b{Бесконечность.} Введем символ $\cfrac{1}{\hat{o}}$, для которого определим следующие операции с надвещественными числами:
+\begin{enumerate}
+	\item $\cfrac{1}{\hat{o}}\cdot a=a\cdot\cfrac{1}{\hat{o}}=\cfrac{a}{\hat{o}},\,\,a\in\mathbb{R}$;
+	\item $\cfrac{1}{\hat{o}}\cdot b\hat{o}=b\hat{o}\cdot\cfrac{1}{\hat{o}}=b,\,\,b\in\mathbb{R}$.
+	\item $\cfrac{1}{\hat{o}}+\hat{a}=\hat{a}+\cfrac{1}{\hat{o}}=\cfrac{1}{\hat{o}},\,\,\hat{a}\in\AbR$.
+\end{enumerate}

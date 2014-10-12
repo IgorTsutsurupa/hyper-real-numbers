@@ -1,0 +1,33 @@
+\ProvidesPackage{style}
+
+\usepackage[14pt]{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{amssymb,latexsym,amsmath,amscd}
+\usepackage{geometry}
+\usepackage{enumerate}
+
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+\newcommand{\hm}[1]{#1\nobreak\discretionary{}{\hbox{\ensuremath{#1}}}{}}
+\newcommand{\degree}{^{\circ}}
+
+\renewcommand{\c}{\mathrm{const}}
+\renewcommand{\i}[1]{\textit{#1}}
+\renewcommand{\b}[1]{\textbf{#1}}
+\renewcommand{\d}[1]{\,d #1}
+
+\renewcommand{\Re}[1]{\operatorname{Re} #1}
+\newcommand{\Ab}[1]{\operatorname{Ab} #1}
+\newcommand{\AbR}{\widehat{\mathbb{R}}}
+\newcommand{\wh}[1]{\widehat{#1}}
+
+\newtheorem{defn}{Определение}
+\newtheorem{theorem}{Теорема}
+\newtheorem{example}{Пример}
+\newtheorem{task}{}
+
+\newenvironment{solve}{\paragraph{$\rhd$}}{\hfill$\square$}
+\newenvironment{proof}{\paragraph{Доказательство.}}{\hfill$\square$}
