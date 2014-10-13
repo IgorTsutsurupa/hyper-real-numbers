@@ -19,7 +19,20 @@
 	Попробуем теперь отыскать множество ее значений. Какие значения могут принимать $\Re{f}$ и $\Ab{f}$? В соответствии с \eqref{eq:algebraicfunc} они зависят от $\Re{\hat{z}}=x$ и $\Ab{\hat{z}}=y$. При $x=y=0$ $\Re{f}=\Ab{f}=0$; при $x=0$, $y\neq 0$ $f$ не определена; при $x\neq 0$, $y\in\mathbb{R}$ $\Re{f}$ принимает любые ненулевые значения, $\Ab{f}$ принимает любые значения. Таким образом, 
 		$$E(f)=\{0\}\cup\{(a, b)\,|\,a\in\mathbb{R}\textbackslash\{0\},\,b\in\mathbb{R}\}\hm=\AbR\textbackslash\{b\hat{o}\,|\,b\neq 0\}.$$
 \end{example}
-\b{Дифференциал.} Рассмотрим функцию $f(\hat{z})$. \i{Правым дифференциалом функции $f(\hat{z})$} назовем функцию надвещественного переменного $g(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})$ и обозначим $d_{+}f(\hat{z})$. \i{Левым дифференциалом функции $f(\hat{z})$} назовем функцию надвещественного переменного $g(\hat{z})=f(\hat{z})-f(\hat{z}-\hat{o})$ и обозначим $d_{-}f(\hat{z})$. Далее, если особо не уточняется, под \i{дифференциалом функции} будет подразумеваться ее правый дифференциал и обозначаться просто $df(\hat{z})$.
+\b{Многочлены.} \i{Надвещественными многочленами} будем называть суммы вида
+	\begin{equation}\label{eq:polynomdef}
+		P_n (\hat{z})=\sum_{i=0}^n \hat{c}_i\hat{z}^i,
+	\end{equation}
+где $\hat{c}_i=a_i+b_i\hat{o}\in\AbR$, $\hat{z}=x+y\hat{o}\in\AbR$. Представим многочлен в алгебраической форме:
+	\begin{eqnarray*}
+		& P_n(\hat{z})=\sum\limits_{i=0}^n \hat{c}_i\hat{z}^i=\sum\limits_{i=0}^n (a_i+b_i\hat{o})(x+y\hat{o})^i=\sum\limits_{i=0} (a_i+b_i\hat{o})(x^i+ix^{i-1}y\hat{o})=\\
+		& =\sum\limits_{i=0}^n \big(a_ix^i+(a_iix^{i-1}y+b_ix^i)\hat{o}\big)=\sum\limits_{i=0}^n a_ix^i+\left(\sum\limits_{i=0}^n (a_iix^{i-1}y+b_ix^i)\right)\hat{o}.
+	\end{eqnarray*}
+	\begin{equation}\label{eq:algebraicpolynom}
+		P_n(\hat{z})=\sum_{i=0}^n a_ix^i+\left(\sum_{i=0}^n (a_iix^{i-1}y+b_ix^i)\right)\hat{o}.
+	\end{equation}
+
+\b{Дифференциалы.} Рассмотрим функцию $f(\hat{z})$. \i{Правым дифференциалом функции $f(\hat{z})$} назовем функцию надвещественного переменного $g(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})$ и обозначим $d_{+}f(\hat{z})$. \i{Левым дифференциалом функции $f(\hat{z})$} назовем функцию надвещественного переменного $g(\hat{z})=f(\hat{z})-f(\hat{z}-\hat{o})$ и обозначим $d_{-}f(\hat{z})$. Далее, если особо не уточняется, под \i{дифференциалом функции} будет подразумеваться ее правый дифференциал и обозначаться просто $df(\hat{z})$.
 \begin{example}
 	Найдем дифференциал функции $f(\hat{z})=\hat{z}^2$:
 		$$df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=(\hat{z}+\hat{o})^2-\hat{z}^2=\hat{z}^2+2\hat{z}\hat{o}-\hat{z}^2=2\hat{z}\hat{o}.$$
@@ -41,15 +54,31 @@
 		$$df=-\cfrac{\hat{o}}{(x+y\hat{o})^2+(x+y\hat{o})\hat{o}}=-\cfrac{\hat{o}}{x^2+(2xy+x)\hat{o}}.$$
 	Представим функцию $df$ в алгебраической форме, воспользовавшись формулой деления:
 		$$df=-\left(\cfrac{0}{x^2}+\cfrac{x^2\cdot 1-0\cdot(2xy+x)}{x^4}\,\hat{o}\right)=-\cfrac{\hat{o}}{x^2}.$$
+	\b{Замечание.} Попробуем найти дифференциал в том виде, в каком мы его понимали раньше:
+		$$df=f(x+dx)-f(x)=\cfrac{1}{x+dx}-\cfrac{1}{x}=-\cfrac{dx}{(x+dx)x}.$$
+	Если бы мы хотели найти производную функции $f$ делением дифференциала на $dx$, то у нас бы ничего не вышло:
+		$$f'=\cfrac{df}{dx}=-\cfrac{1}{x^2+xdx}.$$
+	Чтобы получить правильный ответ, приходится совершать предельный переход, отбрасывая слагаемое $xdx$, что мотивируется ``малостью $xdx$ по сравнению с $x^2$''. Надвещественные числа не нуждаются в подобном обхождении, одерживая победу.
 \end{example}
-\begin{example} Функция $\hat{\omega}=\sgn{\hat{z}}$ для надвещественных чисел определяется так же, как и для вещественных:
-	\begin{equation*}
-		\sgn{\hat{z}} = \begin{cases}
-			1, & \hat{z}>0 \\
-			0, & \hat{z}=0 \\
-			-1, & \hat{z}<0.
-		\end{cases}
-	\end{equation*}
+\begin{example}
+	Обобщим полученные результаты и найдем дифференциал степенной функции $f(\hat{z})=\hat{z}^{\alpha}$, $\alpha\in\mathbb{Q}$:
+		\begin{eqnarray*}
+			& df=(\hat{z}+\hat{o})^{\alpha}-\hat{z}^{\alpha}=(x+(y+1)\hat{o})^{\alpha}-(x+y\hat{o})^{\alpha}=\\
+			& =x^{\alpha}+\alpha x^{\alpha-1}(y+1)\hat{o}-\left(x^{\alpha}+\alpha x^{\alpha-1}y\hat{o}\right),
+		\end{eqnarray*}
+		\begin{equation}
+			d\hat{z}^{\alpha}=\alpha x^{\alpha-1}\hat{o}.
+		\end{equation}
+\end{example}
+\begin{example} 
+	Функция $\hat{\omega}=\sgn{\hat{z}}$ для надвещественных чисел определяется так же, как и для вещественных:
+		\begin{equation*}
+			\sgn{\hat{z}} = \begin{cases}
+				1, & \hat{z}>0 \\
+				0, & \hat{z}=0 \\
+				-1, & \hat{z}<0.
+			\end{cases}
+		\end{equation*}
 	Найдем ее правый дифференциал в точке $\hat{z}=0$. Имеем:
 		$$d_{+}\sgn{0}=\sgn{\hat{o}}-\sgn{0}=1-0=1.$$
 	Аналогично для левого дифференциала:

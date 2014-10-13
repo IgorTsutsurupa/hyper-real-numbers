@@ -1,0 +1,35 @@
+\begin{example}
+Попробуем решить квадратное уравнение 
+	\begin{equation}\label{eq:quadeq}
+		\hat{c}_2\hat{z}^2+\hat{c}_1\hat{z}+\hat{c}_0=0.
+	\end{equation}
+Перепишем его левую часть в алгебраической форме согласно \eqref{eq:algebraicpolynom}:
+	\begin{eqnarray*}
+		& \hat{a}\hat{z}^2+\hat{b}\hat{z}+\hat{c}=0\Leftrightarrow\\
+		& (a_2x^2+a_1x+a_0)+(b_0+a_1y+b_1x+2a_2xy+b_2x^2)\hat{o}=0.\Leftrightarrow\\
+		& \Leftrightarrow\left\{
+			\begin{aligned}
+				& a_2x^2+a_1x+a_0=0 \\
+				& b_0+a_1y+b_1x+2a_2xy+b_2x^2=0
+			\end{aligned}
+		\right.\Leftrightarrow\\
+		& \Leftrightarrow\left\{
+			\begin{aligned}
+				& a_2x^2+a_1x+a_0=0 \\
+				& y=\cfrac{b_2x^2+b_1x+b_0}{2a_2x+a_1}.
+			\end{aligned}
+		\right.
+	\end{eqnarray*}
+Количество корней квадратного уравнения надвещественной переменной зависит от дискриминанта соответствующего ему уравнения $a_2x^2+a_1x+a_0=0$.
+	\begin{enumerate}
+		\item $D<0$ -- уравнение \eqref{eq:quadeq} не имеет решений.
+		\item $D=0$, из первого уравнения имеем $x=-\cfrac{a_1}{2a_2}$. Тогда $b_2x^2+b_1x+b_0+y(2a_2+a_1)=b_2x^2+b_1x+b_0$, что равно нулю тогда и только тогда, когда $\cfrac{b_0}{a_0}=\cfrac{b_1}{a_1}=\cfrac{b_2}{a_2}$.
+	\end{enumerate}
+\end{example}
+
+\b{Бесконечность.} Введем символ $\cfrac{1}{\hat{o}}$, для которого определим следующие операции с надвещественными числами:
+\begin{enumerate}
+	\item $\cfrac{1}{\hat{o}}\cdot a=a\cdot\cfrac{1}{\hat{o}}=\cfrac{a}{\hat{o}},\,\,a\in\mathbb{R}$;
+	\item $\cfrac{1}{\hat{o}}\cdot b\hat{o}=b\hat{o}\cdot\cfrac{1}{\hat{o}}=b,\,\,b\in\mathbb{R}$.
+	\item $\cfrac{1}{\hat{o}}+\hat{a}=\hat{a}+\cfrac{1}{\hat{o}}=\cfrac{1}{\hat{o}},\,\,\hat{a}\in\AbR$.
+\end{enumerate}

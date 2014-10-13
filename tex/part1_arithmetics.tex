@@ -90,6 +90,10 @@
 \begin{equation}\label{eq:npower}
 	\hat{a}^n=(a^n, na^{n-1}b).
 \end{equation}
+\begin{example}
+	Найдем $\hat{a}^0$:
+		$$\hat{a}^0=(a, b)^0=(a^0, 0\cdot a^0b)=(1, 0)=1.$$
+\end{example}
 \begin{example} Может ли произведение надвещественных чисел быть вещественным числом? Да, пример -- произведение чисел вида $(a, b)$ и $(a, -b)$:
 	$$(a, b)\cdot(a, -b)=(aa, ab+a(-b))=(a^2, 0)=a^2.$$
 Их сумма, очевидно, также действительное число.
@@ -141,14 +145,7 @@
 Утверждение является отрицанием аксиомы Архимеда, а его второй способ записи призван подчеркнуть природу объекта $\hat{o}$, меньшего любого действительного числа, который теперь мы будем называть бесконечно малой.
 Также введем отношение ``больше или равно'' $\ge$:
 	\begin{equation}
-	\hat{a}\ge\hat{b}
-	  \Leftrightarrow
-		\left[
-			\begin{aligned}
-				\hat{a}>\hat{b} \\
-				\hat{a}=\hat{b}
-			\end{aligned}
-		\right.
+	\hat{a}\ge\hat{b}\Leftrightarrow\hat{a}>\hat{b}\,\lor\,\hat{a}=\hat{b}
 	\end{equation}
 
 \b{Частное.} \i{Частным} надвещественных чисел $\hat{c}_1$ и $\hat{c}_2$ назовем надвещественное число $\hat{c}$ такое, что
@@ -231,10 +228,10 @@
 	\begin{equation}
 		\sqrt[n]{\hat{a}}=\left(a^{1/n}, \frac{1}{n}a^{(1-n)/n}b\right).
 	\end{equation}
-
-%\b{Бесконечность.} Введем символ $\cfrac{1}{\hat{o}}$, для которого определим следующие операции с надвещественными числами:
-%\begin{enumerate}
-%	\item $\cfrac{1}{\hat{o}}\cdot a=a\cdot\cfrac{1}{\hat{o}}=\cfrac{a}{\hat{o}},\,\,a\in\mathbb{R}$;
-%	\item $\cfrac{1}{\hat{o}}\cdot b\hat{o}=b\hat{o}\cdot\cfrac{1}{\hat{o}}=b,\,\,b\in\mathbb{R}$.
-%	\item $\cfrac{1}{\hat{o}}+\hat{a}=\hat{a}+\cfrac{1}{\hat{o}}=\cfrac{1}{\hat{o}},\,\,\hat{a}\in\AbR$.
-%\end{enumerate}
+Рациональную степень $\hat{\omega}=\hat{z}^{m/n}$, $m\in\mathbb{Z}$, $n\in\mathbb{N}$, определим как $\hat{\omega}=\left(\sqrt[n]{\hat{z}}\right)^m$.\par
+Пусть $\hat{z}^{1/n}=(a^{1/n}, \cfrac{1}{n}a^{(1-n)/n}b)=(a_1, b_1)$. Тогда
+	$$\hat{z}^{m/n}=(a_1^m, ma_1^{m-1}b_1)=(a^{m/n}, ma^{(m-1)/n}\cdot\cfrac{1}{n}a^{(1-n)/n}b)=(a^{m/n}, \cfrac{m}{n}a^{(m-n)/n}b).$$
+Итак, если $\alpha\in\mathbb{Q}$, то
+	\begin{equation}\label{eq:ratpower}
+		\hat{z}^{\alpha}=a^{\alpha}+\alpha a^{\alpha-1}b\hat{o}.
+	\end{equation}
