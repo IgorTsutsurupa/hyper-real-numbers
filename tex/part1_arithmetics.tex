@@ -4,18 +4,19 @@
 
 \b{Определение.} Множеством надвещественных чисел называется множество упорядоченных пар вещественных чисел $(a, b)$ с введенными на нем двумя операциями сложения (символ $+$) и умножения (символ $\cdot$), определенными следующим образом.
 	\begin{enumerate}
-		\item $(a, b)+(c, d)=(a+b, c+d)$, 
-		\item $(a, b)\cdot(c, d)=(ac, ad+bc)$ (не определено, если $a, c$ одновременно равны $0$).
+		\item $(a, b)+(c, d)=(a+b, c+d)$, \eqnum\label{eq:sumdef}
+		\item $(a, b)\cdot(c, d)=(ac, ad+bc)$ (если $a, c$ не одновременно равны $0$). \eqnum\label{eq:multdef}
 	\end{enumerate}
 Число $a$ будем называть \i{вещественной} частью надвещественного числа и обозначать $\Re{\hat a}$, число $b$ -- \i{малой} частью числа и обозначать $\Ab{\hat a}$.\par
 Множество надвещесвенных обозначим $\AbR$. \par
 Заметим, что
-	\begin{eqnarray}
+	\begin{eqnarray*}
 		(a, 0)+(b, 0) &=&(a+b, 0), \\
 		(a, 0)\cdot(b, 0)&=&(ab, 0).
-	\end{eqnarray}
+	\end{eqnarray*}
 Таким образом, имеет смысл писать $a$ вместо $(a, 0)$ и считать множество вещественных чисел подмножеством множества надвещественных чисел:
 	$$\mathbb{R}\subset \AbR.$$
+Подробнее об этом написано в приложении 1.
 \begin{example} 
 	Умножим вещественное число $C$ на надвещественное $\hat{a}=(a, b)$:
 \end{example}
@@ -115,7 +116,7 @@
 \end{eqnarray*}
 Свойство доказано.
 
-\b{Сравнение.} Введем отношение ``больше'' ($>$) на множестве $\AbR\times\AbR$:
+\b{Сравнение.} Определим отношение ``больше'' ($>$) между элементами $\AbR$:
 	\begin{equation}
 	\hat{a}>\hat{b}
 	  \Leftrightarrow
@@ -134,8 +135,21 @@
 Отсюда следует важное утверждение. Рассмотрим числа $n\hat{o}$ и $a$, $a>0$, тогда $n\hat{o}\hm<a$. Поскольку мы не указали $n$ и $a$, то неравенство будет справедливо для любых $n$ и $a$:
 	$$\forall a>0 \,\, \forall n \,\, n\hat{o}<a,$$
 или
-	$$\forall a>0 \quad \hat{o}<a. $$
+	\begin{equation}
+		\forall a>0 \quad 0<\hat{o}<a.
+	\end{equation}
 Утверждение является отрицанием аксиомы Архимеда, а его второй способ записи призван подчеркнуть природу объекта $\hat{o}$, меньшего любого действительного числа, который теперь мы будем называть бесконечно малой.
+Также введем отношение ``больше или равно'' $\ge$:
+	\begin{equation}
+	\hat{a}\ge\hat{b}
+	  \Leftrightarrow
+		\left[
+			\begin{aligned}
+				\hat{a}>\hat{b} \\
+				\hat{a}=\hat{b}
+			\end{aligned}
+		\right.
+	\end{equation}
 
 \b{Частное.} \i{Частным} надвещественных чисел $\hat{c}_1$ и $\hat{c}_2$ назовем надвещественное число $\hat{c}$ такое, что
 	$$\hat{c}\cdot\hat{c}_2=\hat{c}_1,$$
@@ -218,9 +232,9 @@
 		\sqrt[n]{\hat{a}}=\left(a^{1/n}, \frac{1}{n}a^{(1-n)/n}b\right).
 	\end{equation}
 
-\b{Бесконечность.} Введем символ $\cfrac{1}{\hat{o}}$, для которого определим следующие операции с надвещественными числами:
-\begin{enumerate}
-	\item $\cfrac{1}{\hat{o}}\cdot a=a\cdot\cfrac{1}{\hat{o}}=\cfrac{a}{\hat{o}},\,\,a\in\mathbb{R}$;
-	\item $\cfrac{1}{\hat{o}}\cdot b\hat{o}=b\hat{o}\cdot\cfrac{1}{\hat{o}}=b,\,\,b\in\mathbb{R}$.
-	\item $\cfrac{1}{\hat{o}}+\hat{a}=\hat{a}+\cfrac{1}{\hat{o}}=\cfrac{1}{\hat{o}},\,\,\hat{a}\in\AbR$.
-\end{enumerate}
+%\b{Бесконечность.} Введем символ $\cfrac{1}{\hat{o}}$, для которого определим следующие операции с надвещественными числами:
+%\begin{enumerate}
+%	\item $\cfrac{1}{\hat{o}}\cdot a=a\cdot\cfrac{1}{\hat{o}}=\cfrac{a}{\hat{o}},\,\,a\in\mathbb{R}$;
+%	\item $\cfrac{1}{\hat{o}}\cdot b\hat{o}=b\hat{o}\cdot\cfrac{1}{\hat{o}}=b,\,\,b\in\mathbb{R}$.
+%	\item $\cfrac{1}{\hat{o}}+\hat{a}=\hat{a}+\cfrac{1}{\hat{o}}=\cfrac{1}{\hat{o}},\,\,\hat{a}\in\AbR$.
+%\end{enumerate}

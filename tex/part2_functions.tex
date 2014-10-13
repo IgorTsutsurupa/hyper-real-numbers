@@ -1,0 +1,85 @@
+\begin{center}
+	\b{ЧАСТЬ 2: ФУНКЦИИ}
+\end{center}
+
+Функции $f: \AbR \longmapsto \AbR$ назовем \i{функциями надвещественного переменного}. Поскольку каждое надвещественное число $\hat{\omega}$ характеризуется парой вещественных чисел, то задание надвещественной функции $\hat{\omega}=u+v\hat{o}$ переменной $\hat{z}=x+y\hat{o}$ эквивалентно заданию двух вещественных функций от двух вещественных переменных:
+\begin{equation}\label{eq:algebraicfunc}
+	f(\hat{z})=u(x, y)+v(x, y)\hat{o},
+\end{equation}
+Такую запись будем называть алгебраической формой функции $f(\hat{z})$. Функции $u$ и $v$ назовем \i{вещественной} и \i{малой} частями функции $f$ соответственно.
+\begin{example}
+	Запишем функцию $f(\hat{z})=\hat{z}^3+2\hat{z}^2$ в алгебраической форме. Пусть $\hat{z}=x+y\hat{o}$, тогда:
+	\begin{eqnarray*}
+		&f(\hat{z})=f(x+y\hat{o})=(x+y\hat{o})^3+2(x+y\hat{o})^2=x^3+3x^2y\hat{o}+2x^2+4xy\hat{o}=      \\ &=(x^3+2x^2)+(3x^2y+4xy)\hat{o}.
+	\end{eqnarray*}
+\end{example}
+\begin{example}
+	Найдем область определения этой же функции. Поскольку возведение в степень не определено для чисел $\hat{z}=b\hat{o}$, $b\neq 0$, то 
+		$$D(f)=\AbR\textbackslash\{b\hat{o}\,|\,b\neq 0\}.$$
+	Попробуем теперь отыскать множество ее значений. Какие значения могут принимать $\Re{f}$ и $\Ab{f}$? В соответствии с \eqref{eq:algebraicfunc} они зависят от $\Re{\hat{z}}=x$ и $\Ab{\hat{z}}=y$. При $x=y=0$ $\Re{f}=\Ab{f}=0$; при $x=0$, $y\neq 0$ $f$ не определена; при $x\neq 0$, $y\in\mathbb{R}$ $\Re{f}$ принимает любые ненулевые значения, $\Ab{f}$ принимает любые значения. Таким образом, 
+		$$E(f)=\{0\}\cup\{(a, b)\,|\,a\in\mathbb{R}\textbackslash\{0\},\,b\in\mathbb{R}\}\hm=\AbR\textbackslash\{b\hat{o}\,|\,b\neq 0\}.$$
+\end{example}
+\b{Дифференциал.} Рассмотрим функцию $f(\hat{z})$. \i{Правым дифференциалом функции $f(\hat{z})$} назовем функцию надвещественного переменного $g(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})$ и обозначим $d_{+}f(\hat{z})$. \i{Левым дифференциалом функции $f(\hat{z})$} назовем функцию надвещественного переменного $g(\hat{z})=f(\hat{z})-f(\hat{z}-\hat{o})$ и обозначим $d_{-}f(\hat{z})$. Далее, если особо не уточняется, под \i{дифференциалом функции} будет подразумеваться ее правый дифференциал и обозначаться просто $df(\hat{z})$.
+\begin{example}
+	Найдем дифференциал функции $f(\hat{z})=\hat{z}^2$:
+		$$df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=(\hat{z}+\hat{o})^2-\hat{z}^2=\hat{z}^2+2\hat{z}\hat{o}-\hat{z}^2=2\hat{z}\hat{o}.$$
+	Если $\hat{z}=x+y\hat{o}$, то
+		$$df=2(x+y\hat{o})\hat{o}=2x\hat{o}.$$
+\end{example}
+\begin{example}
+	Найдем дифференциал функции $f(\hat{z})=\hat{z}$:
+		$$df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=\hat{z}+\hat{o}-\hat{z}=\hat{o}.$$
+	Это же равенство запишем в виде
+		\begin{equation}
+			d\hat{z}=\hat{o}.
+		\end{equation}
+\end{example}
+\begin{example}
+	Найдем дифференциал функции $f(\hat{z})=\cfrac{1}{\hat{z}}$:
+		$$df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=\cfrac{1}{\hat{z}+\hat{o}}-\cfrac{1}{\hat{z}}=\cfrac{\hat{z}-(\hat{z}+\hat{o})}{(\hat{z}+\hat{o})\hat{z}}=-\cfrac{\hat{o}}{\hat{z}^2+\hat{z}\hat{o}}.$$
+	Представим $\hat{z}$ в алгебраической форме:
+		$$df=-\cfrac{\hat{o}}{(x+y\hat{o})^2+(x+y\hat{o})\hat{o}}=-\cfrac{\hat{o}}{x^2+(2xy+x)\hat{o}}.$$
+	Представим функцию $df$ в алгебраической форме, воспользовавшись формулой деления:
+		$$df=-\left(\cfrac{0}{x^2}+\cfrac{x^2\cdot 1-0\cdot(2xy+x)}{x^4}\,\hat{o}\right)=-\cfrac{\hat{o}}{x^2}.$$
+\end{example}
+\begin{example} Функция $\hat{\omega}=\sgn{\hat{z}}$ для надвещественных чисел определяется так же, как и для вещественных:
+	\begin{equation*}
+		\sgn{\hat{z}} = \begin{cases}
+			1, & \hat{z}>0 \\
+			0, & \hat{z}=0 \\
+			-1, & \hat{z}<0.
+		\end{cases}
+	\end{equation*}
+	Найдем ее правый дифференциал в точке $\hat{z}=0$. Имеем:
+		$$d_{+}\sgn{0}=\sgn{\hat{o}}-\sgn{0}=1-0=1.$$
+	Аналогично для левого дифференциала:
+		$$d_{-}\sgn{0}=\sgn{0}-\sgn{-\hat{o}}=0-(-1)=1.$$
+\end{example}
+Последний пример наталкивает на новое определение. Функция $f$ называется \i{дифференцируемой справа в точке $\hat{z}_0$}, если $\Re{d_{+}f(\hat{z}_0)}=0$. Аналогично, функция $f$ называется \i{дифференцируемой слева в точке $\hat{z}_0$}, если $\Re{d_{-}f(\hat{z}_0)}=0$. Функция называется \i{дифференцируемой в точке $\hat{z}_0$}, если она дифференцируема в ней и справа, и слева.\par
+Таким образом, согласно \eqref{eq:algebraicfunc} дифференциал такой функции может быть записан как~$df(x+y\hat{o})\hm=u(x, y)\hat{o}$.
+
+\b{Свойства дифференциала} Пусть $f$ и $g$ -- функции надвещественного переменного. Тогда
+\begin{enumerate}
+	\item $df(\hat{z})=0, f(\hat{z})=\hat{z}_0\in\AbR$;
+	\item $d(f+g)(\hat{z})=df(\hat{z})+dg(\hat{z})$;
+	\item $d(fg)(\hat{z})=f(\hat{z}+\hat{o})dg(\hat{z})+g(\hat{z})df(\hat{z})=f(\hat{z})dg(\hat{z})+g(\hat{z}+\hat{o})df(\hat{z})$;
+	\item $d\left({\cfrac{f}{g}}\right)(\hat{z})=\cfrac{g(\hat{z})df(\hat{z})-f(\hat{z})dg(\hat{z})}{g(\hat{z})g(\hat{z}+\hat{o})}$.
+\end{enumerate}
+Докажем свойства дифференциала по порядку.
+\begin{enumerate}
+	\item $df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=\hat{z}_0-\hat{z}_0=0$;
+	\item $d(f+g)(\hat{z})=(f+g)(\hat{z}+\hat{o})-(f+g)(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})+g(\hat{z}+\hat{o})-g(\hat{z})=df+dg$;
+	\item $\begin{aligned}
+		& d(fg)(\hat{z})=(fg)(\hat{z}+\hat{o})-(fg)(\hat{z})=\\
+		& =f(\hat{z}+\hat{o})g(\hat{z}+\hat{o})-f(\hat{z})g(\hat{z})=\\
+		& =f(\hat{z}+\hat{o})g(\hat{z}+\hat{o})-f(\hat{z}+\hat{o})g(\hat{z})+f(\hat{z}+\hat{o})g(\hat{z})-f(\hat{z})g(\hat{z})=\\
+		& =f(\hat{z}+\hat{o})\left(g(\hat{z}+\hat{o})-g(\hat{z})\right)+g(\hat{z})\left(f(\hat{z}+\hat{o})-f(\hat{z})\right)=\\
+		& =f(\hat{z}+\hat{o})dg(\hat{z})+g(\hat{z})df(\hat{z})
+		\end{aligned}$;
+	\item $\begin{aligned}
+		& d\left({\cfrac{f}{g}}\right)=\cfrac{f(\hat{z}+\hat{o})}{g(\hat{z}+\hat{o})}-\cfrac{f(\hat{z})}{g(\hat{z})}=\\
+		& =\cfrac{f(\hat{z}+\hat{o})g(\hat{z})-f(\hat{z})g(\hat{z}+\hat{o})}{g(\hat{z})g(\hat{z}+\hat{o})}=\\
+		& =\cfrac{f(\hat{z}+\hat{o})g(\hat{z})-f(\hat{z})g(\hat{z})+f(\hat{z})g(\hat{z})-f(\hat{z})g(\hat{z}+\hat{o})}{g(\hat{z})g(\hat{z}+\hat{o})}= \\
+		& =\cfrac{g(\hat{z})\big(f(\hat{z}+\hat{o})-f(\hat{z})\big)-f(\hat{z})\big(g(\hat{z}+\hat{o})-g(\hat{z})\big)}{g(\hat{z})g(\hat{z}+\hat{o})}=\cfrac{g(\hat{z})df(\hat{z})-f(\hat{z})dg(\hat{z})}{g(\hat{z})g(\hat{z}+\hat{o})}.
+		\end{aligned}$.
+\end{enumerate}

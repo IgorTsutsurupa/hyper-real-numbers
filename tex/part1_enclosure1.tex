@@ -1,0 +1,61 @@
+\begin{center}
+	\b{Приложение 1: о расширении действительных чисел}
+\end{center}
+
+Покажем, что множество упорядоченных пар $\{(a, 0)\,|\,a\in\mathbb{R}\}$ с введеными на нем операциями сложения~(1), умножения~(2) и отношением порядка ``больше или равно'' $\big((a, 0)\ge (b, 0)\Leftrightarrow\,a\ge b\big)$ является множеством действительных чисел.\par
+Определение множества действительных чисел и список аксиом см. в \href{https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE}{википедии}. Покажем, что имеющееся множество удовлетворяет всем аксиомам.
+\b{Аксиомы поля}.
+\begin{enumerate}
+	\item Сложение коммутативно. Для любых $(a, 0),\,(b, 0)\in\AbR$
+		$$(a, 0)+(b, 0)=(a+b, 0)=(b+a, 0)=(b, 0)+(a, 0).$$
+	\item Сложение ассоциативно. Для любых $(a, 0),\,(b, 0),\,(c, 0)\in\AbR$
+		\begin{eqnarray*}
+		& (a, 0)+\big((b, 0)+(c, 0)\big)=(a, 0)+(b+c, 0)=(a+(b+c), 0)=\\
+		& =((a+b)+c, 0)=(a+b, 0)+(c, 0)=\big((a, 0)+(b, 0)\big)+(c, 0).
+		\end{eqnarray*}
+	\item Ноль существует. Для любых $(a, 0)\in\AbR$
+		$$(a, 0)+(0, 0)=(a+0, 0)=(a, 0).$$
+	\item Противоположный элемент существует. Для любых $(a, 0)\in\AbR$
+		$$(a, 0)+(-a, 0)=(a+(-a), 0)=(0, 0).$$
+	\item Умножение коммутативно. Для любых $(a, 0),\,(b, 0)\in\AbR$
+		$$(a, 0)\cdot(b, 0)=(ab, 0)=(ba, 0)=(b, 0)\cdot(a, 0).$$
+	\item Умножение ассоциативно. Для любых $(a, 0),\,(b, 0),\,(c, 0)\in\AbR$
+		\begin{eqnarray*}
+			& (a, 0)\cdot\big((b, 0)\cdot(c, 0)\big)=(a, 0)\cdot(bc, 0)=\\
+			& =(a(bc), 0)=((ab)c, 0)=(ab, 0)\cdot(c, 0)=\\
+			& =\big((a, 0)\cdot(b, 0)\big)\cdot(c, 0).
+		\end{eqnarray*}
+	\item Единица существует. Для любых $(a, 0)\in\AbR$
+		$$(a, 0)\cdot(1, 0)=(a\cdot 1, 0)=(a, 0).$$
+	\item  Обратный элемент существует. Для любого $(a, 0)\neq (0, 0)$
+		$$ (a, 0)\cdot(a^{-1}, 0)=(aa^{-1}, 0)=(1, 0).$$
+	\item Сложение дистрибутивно относительно умножения.\par
+	Для любых $(a, 0),\,(b, 0),\,(c, 0)\in\AbR$
+		\begin{eqnarray*}
+			& (a, 0)\cdot\big((b, 0)+(c, 0)\big)=(a, 0)\cdot(b+c, 0)=\\
+			& =(a(b+c), 0)=(ab+bc, 0)=(ab, 0)+(ac, 0)=\\
+			& =(a, 0)\cdot(b, 0)+(a, 0)\cdot(c, 0).
+		\end{eqnarray*}
+	\item Единица и ноль не равны:
+		$$1\neq 0 \Rightarrow (1, 0)\neq(0, 0).$$
+\end{enumerate}
+\b{Аксиомы порядка}.
+\begin{enumerate}
+	\item Отношение $\ge$ рефлексифно. Для любых $(a, 0)\in\AbR$
+		$$ a\ge a\Leftrightarrow(a, 0)\ge(a, 0).$$
+	\item Отношение $\ge$ антисимметрично. Для любых $a, b\in\mathbb{R}$
+		$$(a, 0)\ge(b, 0)\,\wedge\,(b, 0)\ge(a, 0)\Leftrightarrow a\ge b\,\wedge\,b\ge a\Leftrightarrow a=b\Leftrightarrow (a, 0)=(b, 0).$$
+	\item Отношение $\ge$ транзитивно. Для любых $(a, 0),\,(b, 0),\,(c, 0)\in\AbR$
+		$$(a, 0)\ge(b, 0)\,\wedge\,(b, 0)\ge(c, 0)\Leftrightarrow a\ge b\,\wedge\,b\ge c\Leftrightarrow a\ge c\Leftrightarrow (a, 0)\ge(c, 0).$$
+	\item $\{(a, 0)\,|\,a\in\mathbb{R}\}$ линейно упорядочено. Для любых $(a, 0),\,(b, 0)\in\AbR$
+		$$ a\ge b\,\lor\,b\ge a\Leftrightarrow (a, 0)\ge (b, 0)\,\lor\, (b, 0)\ge(a, 0).$$
+	\item Для любых $(a, 0),\,(b, 0),\,(c, 0)\in\AbR$
+		$$(a, 0)\ge(b, 0)\Leftrightarrow a\ge b\Leftrightarrow a+c\ge b+c\Leftrightarrow (a+c, 0)\ge b+c.$$
+	\item Для любых $(a, 0),\,(b, 0)\in\AbR$
+		\begin{eqnarray*}
+			& (a, 0)\ge(0, 0)\,\wedge\,(b,0)\ge(0,0)\Leftrightarrow a\ge 0\wedge b\ge 0\Leftrightarrow \\
+			& \Leftrightarrow ab\ge 0\Leftrightarrow (ab, 0)\ge 0\Leftrightarrow(a, 0)\cdot(b, 0)\ge 0.
+		\end{eqnarray*}
+\end{enumerate}
+\b{Аксиома непрерывности.} Каковы бы ни были непустые множества $A\hm\subset\{(a, 0)\,|\,a\in\mathbb{R}\}$ и $B\subset\{(a, 0)\,|\,a\in\mathbb{R}\}$, такие что для любых двух элементов $(a, 0)\in A$ и $(b, 0)\in B$ выполняется неравенство $(a, 0)\ge(b, 0)$, существует такое число $(c, 0)\in\{(a, 0)\,|\,a\in\mathbb{R}\}$, что для всех $(a, 0)\in A$ и $(b, 0)\in B$ имеет место соотношение
+	$$(a, 0)\ge(c, 0)\ge(b, 0).$$
