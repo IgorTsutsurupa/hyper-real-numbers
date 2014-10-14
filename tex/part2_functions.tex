@@ -25,7 +25,7 @@
 	\end{equation}
 где $\hat{c}_i=a_i+b_i\hat{o}\in\AbR$, $\hat{z}=x+y\hat{o}\in\AbR$. Представим многочлен в алгебраической форме:
 	\begin{eqnarray*}
-		& P_n(\hat{z})=\sum\limits_{i=0}^n \hat{c}_i\hat{z}^i=\sum\limits_{i=0}^n (a_i+b_i\hat{o})(x+y\hat{o})^i=\sum\limits_{i=0} (a_i+b_i\hat{o})(x^i+ix^{i-1}y\hat{o})=\\
+		& P_n(\hat{z})=\sum\limits_{i=0}^n \hat{c}_i\hat{z}^i=\sum\limits_{i=0}^n (a_i+b_i\hat{o})(x+y\hat{o})^i=\sum\limits_{i=0}^n (a_i+b_i\hat{o})(x^i+ix^{i-1}y\hat{o})=\\
 		& =\sum\limits_{i=0}^n \big(a_ix^i+(a_iix^{i-1}y+b_ix^i)\hat{o}\big)=\sum\limits_{i=0}^n a_ix^i+\left(\sum\limits_{i=0}^n (a_iix^{i-1}y+b_ix^i)\right)\hat{o}.
 	\end{eqnarray*}
 	\begin{equation}\label{eq:algebraicpolynom}
@@ -71,7 +71,7 @@
 		\end{equation}
 \end{example}
 \begin{example} 
-	Функция $\hat{\omega}=\sgn{\hat{z}}$ для надвещественных чисел определяется так же, как и для вещественных:
+	Функция $f(\hat{z})=\sgn{\hat{z}}$ для надвещественных чисел определяется так же, как и для вещественных:
 		\begin{equation*}
 			\sgn{\hat{z}} = \begin{cases}
 				1, & \hat{z}>0 \\
@@ -82,10 +82,25 @@
 	Найдем ее правый дифференциал в точке $\hat{z}=0$. Имеем:
 		$$d_{+}\sgn{0}=\sgn{\hat{o}}-\sgn{0}=1-0=1.$$
 	Аналогично для левого дифференциала:
-		$$d_{-}\sgn{0}=\sgn{0}-\sgn{-\hat{o}}=0-(-1)=1.$$
+		$$d_{-}\sgn{0}=\sgn{0}-\sgn{(-\hat{o})}=0-(-1)=1.$$
+	С другой стороны, в любой другой точке $\hat{z}\neq 0$ имеем
+		$$d\sgn{\hat{z}}=\sgn{(\hat{z}+\hat{o})}-\sgn{\hat{z}}=0.$$
 \end{example}
-Последний пример наталкивает на новое определение. Функция $f$ называется \i{дифференцируемой справа в точке $\hat{z}_0$}, если $\Re{d_{+}f(\hat{z}_0)}=0$. Аналогично, функция $f$ называется \i{дифференцируемой слева в точке $\hat{z}_0$}, если $\Re{d_{-}f(\hat{z}_0)}=0$. Функция называется \i{дифференцируемой в точке $\hat{z}_0$}, если она дифференцируема в ней и справа, и слева.\par
-Таким образом, согласно \eqref{eq:algebraicfunc} дифференциал такой функции может быть записан как~$df(x+y\hat{o})\hm=u(x, y)\hat{o}$.
+Последний пример наталкивает на новое определение. Функция $f$ называется \i{дифференцируемой справа в точке $\hat{z}_0$}, если $\Re{d_{+}f(\hat{z}_0)}=0$. Аналогично, функция $f$ называется \i{дифференцируемой слева в точке $\hat{z}_0$}, если $\Re{d_{-}f(\hat{z}_0)}=0$. Функция называется \i{дифференцируемой в точке $\hat{z}_0$}, если она дифференцируема справа и слева, а правый и левый дифференциалы равны. В силу \eqref{eq:algebraicfunc} дифференциал такой функции может быть записан как~$df(x+y\hat{o})\hm=u(x, y)\hat{o}$.
+\begin{example}
+	Согласно этому определению, функция $\sgn{\hat{z}}$ недифференцируема в точке $\hat{z}=0$, но дифференцируема в любой другой точке. Рассмотрим функцию $f(\hat{z})=|\hat{z}|$, которая задается кусочно:
+		\begin{equation*}
+			|\hat{z}| = \begin{cases}
+				\hat{z}, & \hat{z}\ge 0 \\
+				-\hat{z}, & \hat{z}<0 \\
+			\end{cases}
+		\end{equation*}
+	Ее правый дифференциал в точке $\hat{z}=0$ равен
+		$$d_{+}|\hat{z}|=|\hat{o}|-|0|=\hat{o},$$
+	а левый, с другой стороны,
+		$$d_{-}|\hat{z}|=|0|-|-\hat{o}|=-\hat{o}.$$
+	Функция дифференцируема слева и справа, но правый и левый дифференциалы не равны, а $|\hat{z}|$ не дифференцируем в нуле.
+\end{example}
 
 \b{Свойства дифференциала} Пусть $f$ и $g$ -- функции надвещественного переменного. Тогда
 \begin{enumerate}
@@ -112,3 +127,44 @@
 		& =\cfrac{g(\hat{z})\big(f(\hat{z}+\hat{o})-f(\hat{z})\big)-f(\hat{z})\big(g(\hat{z}+\hat{o})-g(\hat{z})\big)}{g(\hat{z})g(\hat{z}+\hat{o})}=\cfrac{g(\hat{z})df(\hat{z})-f(\hat{z})dg(\hat{z})}{g(\hat{z})g(\hat{z}+\hat{o})}.
 		\end{aligned}$.
 \end{enumerate}
+
+Докажем теорему.
+\begin{theorem} 
+	Вещественная часть функции $f$ зависит только от вещественной части аргумента тогда и только тогда, когда $f$ дифференцируема:
+		\begin{equation}
+			\Re{f(\hat{z})}=v(\Re{\hat{z}})\Leftrightarrow df(\hat{z})=u(x, y)\hat{o}.
+		\end{equation}
+\end{theorem}
+\begin{proof}
+
+	\b{Необходимость.} Поскольку $\Re{f(\hat{z})}=v(\Re{\hat{z}})$, то $f(\hat{z})\hm=f(x+y\hat{o})\hm=v(x)+u(x, y)\hat{o}$. Тогда
+		\begin{eqnarray*}
+			& df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=f(x+(y+1)\hat{o})-f(x+y\hat{o})=\\
+			& =v(x)+u(x, y+1)\hat{o}-\big(v(x)+u(x, y)\hat{o}\big)=\big(u(x, y+1)-u(x, y)\big)\hat{o}=\tilde{u}(x, y)\hat{o}.
+		\end{eqnarray*}
+
+	\b{Достаточность.} Пусть функция $f(\hat{z})=v(x, y)+u(x, y)\hat{o}$ дифференцируема. Тогда
+		\begin{eqnarray*}
+			& df(\hat{z})=f(\hat{z}+\hat{o})-f(\hat{z})=f(x+(y+1)\hat{o})-f(x+y\hat{o})=\\
+			& =v(x, y+1)+u(x, y+1)\hat{o}-\big(v(x, y)+u(x, y)\hat{o}\big), \\
+			& \big(v(x, y+1)-v(x, y)\big)+\big(u(x, y+1)-u(x, y)\big)\hat{o}=\tilde{u}(x, y)\hat{o}
+		\end{eqnarray*}
+		Вещественная часть правой части равенства равна нулю, тогда
+			$$v(x, y+1)-v(x, y)=0.$$
+		Поскольку равенство верно для любых $y$, то $v(x, y)$ зависит только от $x$.
+\end{proof}
+
+Мы получили, что дифференцируемые функции записываются в виде $f(x+y\hat{o})\hm=v(x)+u(x, y)\hat{o}$. Отыскать функцию $v(x)$ довольно просто.
+\begin{theorem}
+	Если $\Re{f(\hat{z})}=v(\Re{\hat{z}})$, то $v(x)=f(x)$.
+\end{theorem}
+\begin{proof}
+	Найдем значение $f$ в вещественной точке $x\in\mathbb{R}$:
+		$$f(x)=v(x)+u(x, 0)\hat{o},$$
+	из чего немендленно следует, что $f(x)=v(x)$.
+\end{proof}
+
+Итак, дифференцируемые функции представимы в виде
+	\begin{equation}
+		f(\hat{z})=f(x+y\hat{o})=f(x)+u(x, y)\hat{o}.
+	\end{equation}
